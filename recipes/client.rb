@@ -20,7 +20,7 @@
 include_recipe "collectd"
 
 servers = []
-search(:node, "recipes:collectd\\:\\:server AND chef_environment:#{node.chef_environment}") do |n|
+search(:node, "run_list:itison-base\\:\\:monitoring_server AND chef_environment:#{node.chef_environment}") do |n|
   servers << n['fqdn']
 end
 
